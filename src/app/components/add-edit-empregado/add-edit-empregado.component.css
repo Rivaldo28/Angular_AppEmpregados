@@ -1,0 +1,28 @@
+img{
+  width: 80%;
+  height: 80%;
+}
+.example-container{
+  width: 100%;
+  font-size: 16px;
+}
+.radio-dimensao{
+  margin-right: 10px;
+}
+.btn-success{
+  background-color: #4375A3;
+  border-color: #4375A3;
+  float: right;
+}
+.btn-secondary{
+  float: right;
+  margin-right: 10px;
+  outline: none;
+}
+.div-strong{
+  margin-top: -20px;
+}
+.mda-form-msg{
+  color:#f44336;
+}
+  

@@ -1,0 +1,11 @@
+<mat-toolbar class="nav-alerta">
+  <span>Mensagem</span>
+  <button mat-button class="btnX" (click)="onNoClick()">x</button>
+</mat-toolbar> 
+<div mat-dialog-content class="dialog">
+  <p>{{mensagem}}</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancelar</button>
+  <button mat-button [mat-dialog-close]="btn" cdkFocusInitial>Aceitar</button>
+</div>

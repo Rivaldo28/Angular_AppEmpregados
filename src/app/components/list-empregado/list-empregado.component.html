@@ -1,0 +1,69 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6">
+      <h2>Lista de empregados</h2>
+    </div>
+    <div class="col-lg-6 button">
+      <button mat-raised-button color="warn" routerLink="/add">ADICIONAR</button>
+    </div>
+  </div>
+  <mat-form-field appearance="standard">
+    <mat-label>Filtro</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Filtro" #input autocomplete="off">
+  </mat-form-field>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort >
+  <tr>
+    <ng-container matColumnDef="nomeCompleto">
+      <th mat-header-cell *matHeaderCellDef > Nome completo </th>
+      <td mat-cell *matCellDef="let element"> {{element.nomeCompleto}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef  mat-sort-header> Email </th>
+      <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="estadoCivil">
+      <th mat-header-cell *matHeaderCellDef> Estado civil </th>
+      <td mat-cell *matCellDef="let element"> {{element.estadoCivil}} </td>
+    </ng-container>
+  
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="fecharEntrada">
+      <th mat-header-cell *matHeaderCellDef> Fechar Entrada </th>
+      <td mat-cell *matCellDef="let element"> {{element.fecharEntrada | date:'dd/MM/yyyy'}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="sexo">
+      <th mat-header-cell *matHeaderCellDef> Sexo </th>
+      <td mat-cell *matCellDef="let element"> {{element.sexo}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="telefone">
+      <th mat-header-cell *matHeaderCellDef> Telefone </th>
+      <td mat-cell *matCellDef="let element"> {{element.telefone}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="acoes">
+      <th mat-header-cell *matHeaderCellDef> Ações </th>
+      <td mat-cell *matCellDef="let element; let i = index">
+        <a class="pointer" routerLink="edit/{{ i }}">
+          <mat-icon class="edit" name="Editar" title="Editar">edit</mat-icon>
+        </a>
+        <a class="pointer" (click)=deletarEmpregado(i)> 
+          <mat-icon class="delete" name="Excluir" title="Excluir">delete</mat-icon>
+        </a>
+      </td>
+    </ng-container>
+  </tr>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                   showFirstLastButtons 
+                   aria-label="Select page of periodic elements">
+   </mat-paginator>
+</div>

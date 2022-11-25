@@ -1,0 +1,22 @@
+table{
+  width:100%;
+}
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+.edit{
+  color:#1878B0
+}
+.delete{
+  color:#E15939
+}
+tr{
+  border:10px;
+}
+tr:nth-child(even){
+  background-color: #d3d3d3;
+}
+.button{
+  text-align:right;
+}

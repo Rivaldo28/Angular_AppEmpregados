@@ -1,0 +1,35 @@
+.nav-alerta{
+  background-color:#4375A3; 
+  color:#FFFFFF;
+  width:300px;
+  height: 35px;
+  left:-1%;
+  display: block;
+  text-align: center;
+  margin-top: -24px;
+  margin-left: -24px;
+}
+.nav-alerta span{
+  margin:auto;
+  margin-right: -50px;
+  font-size:17px;
+}
+.btnX{
+  display: block;
+  float:right;
+  width:15px;
+  margin-right: -15px;
+  font: bold;
+}
+.dialog{
+  display: flex;
+  margin-top:10px;
+}
+p{
+  margin:auto;
+  text-align: center;
+}
+button{
+  text-align: center;
+  margin: auto;
+}
